@@ -55,10 +55,10 @@ module DisqusRails
     end
 
 
-    def disqus_thread(disqusable_id=nil, disqusable_title=nil)
+    def disqus_thread(disqusable_id=nil, disqusable_title=nil, disqusable_url=nil)
       content =  content_tag(:div, "", :id => "disqus_thread")
       content += javascript_tag %Q"$(document).ready(function(){
-                          disqus_rails.draw_thread(\"#{disqusable_id}\", \"#{disqusable_title}\");
+                          disqus_rails.draw_thread(\"#{disqusable_id}\", \"#{disqusable_title}\", \"#{disqusable_url}\");
                         });"
     end
   end

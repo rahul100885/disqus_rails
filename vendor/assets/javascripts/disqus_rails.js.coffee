@@ -61,13 +61,15 @@ class @DisqusRails
         $(document).trigger "disqus:pre_reset"
       ]
 
-  draw_thread: (disqusable_id, disqusable_title)->
+  draw_thread: (disqusable_id, disqusable_title, disqusable_url)->
 
     @disqusable_id = disqusable_id
     @disqusable_title = disqusable_title
+    @disqusable_url = disqusable_url
 
     window.disqus_shortname = @short_name
     window.disqus_title = @disqusable_title || document.title
+    window.disqus_url = @disqusable_url if @disqusable_url 
 
     (->
       dsq = document.createElement("script")
