@@ -68,7 +68,7 @@ module DisqusRails
       end
 
       def find_by_ident(disqusable_id)
-        Thread.where(:forum => @forum, :"thread:ident" => disqusable_id).first
+        Thread.where(:forum => DisqusRails::SHORT_NAME, :"thread:ident" => disqusable_id).first
       end
     end
 
